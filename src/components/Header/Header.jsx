@@ -14,7 +14,7 @@ export default function Header() {
 
     return (
         <>
-            <header className='block w-full text-white fixed top-0 left-0 right-0'>
+            <header className='block w-full text-white fixed top-0 left-0 right-0 z-10'>
                 <div className='bg-[#011e29] py-[12px]'>
                     <div className='header flex w-full max-w-[80%] relative m-auto'>
                         <div className="date w-[150px]">
