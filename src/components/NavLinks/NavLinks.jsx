@@ -5,16 +5,16 @@ export default function NavLinks() {
     return (
         <>
             <div className="navLinks flex w-full max-w-[80%] relative m-auto flex-wrap justify-between">
-                <NavLink className='pr-[15px] py-[16px] font-extrabold kalam' to="/">Home</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Latest News</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">India</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">World</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Entertainment</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Business</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Technology</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Health</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Science</NavLink>
-                <NavLink className='px-[30px] py-[16px] font-extrabold kalam' to="/">Sports</NavLink>
+                <NavLink className={({ isActive }) => 'pr-[15px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[15px] py-[16px] font-extrabold kalam text-gray-600')} to="/">Home</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/LatestNews">Latest News</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/India">India</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/World">World</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/entertainment">Entertainment</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/business">Business</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/technology">Technology</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/health">Health</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/science">Science</NavLink>
+                <NavLink className={({ isActive }) => 'px-[30px] py-[16px] font-extrabold kalam ' + (isActive ? 'text-cyan-400' : 'px-[30px] py-[16px] font-extrabold kalam text-gray-600')} to="/sports">Sports</NavLink>
             </div>
         </>
     )
