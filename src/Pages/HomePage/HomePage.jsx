@@ -73,7 +73,7 @@ export default function HomePage() {
 
     if (location.pathname === '/India') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('India News')
       setCountry("in")
       setSide(false)
       setMid(true)
@@ -82,7 +82,7 @@ export default function HomePage() {
 
     if (location.pathname === '/World') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('World News')
       setCountry("us")
       setSide(true)
       setMid(false)
@@ -90,7 +90,7 @@ export default function HomePage() {
 
     if (location.pathname === '/entertainment') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Entertainment')
       setCategory('entertainment')
       setSide(true)
       setMid(false)
@@ -98,7 +98,7 @@ export default function HomePage() {
 
     if (location.pathname === '/business') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Business')
       setCategory('business')
       setSide(true)
       setMid(false)
@@ -106,7 +106,7 @@ export default function HomePage() {
 
     if (location.pathname === '/technology') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Technology')
       setCategory('technology')
       setSide(true)
       setMid(false)
@@ -114,7 +114,7 @@ export default function HomePage() {
 
     if (location.pathname === '/health') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Health')
       setCategory('health')
       setSide(true)
       setMid(false)
@@ -122,7 +122,7 @@ export default function HomePage() {
 
     if (location.pathname === '/science') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Science')
       setCategory('science')
       setSide(true)
       setMid(false)
@@ -130,7 +130,7 @@ export default function HomePage() {
 
     if (location.pathname === '/sports') {
       setLatestHeading('Top News')
-      setTopHeading('Latest News')
+      setTopHeading('Sports')
       setCategory('sports')
       setSide(true)
       setMid(false)
