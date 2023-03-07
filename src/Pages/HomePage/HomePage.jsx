@@ -169,7 +169,7 @@ export default function HomePage() {
                                 <h1 className='kalam font-extrabold text-[gray]'>{data.author}</h1>
                               </div>
                               <div className="title my-[8px] shadow-2xl">
-                                <p className='kalam font-extrabold'><a href={data.url} rel='noreferrer' target="_blank">{data.title}</a></p>
+                                <p className='kalam font-extrabold'><a href={data.url} rel='noopener' target="_blank">{data.title}</a></p>
                               </div>
                             </div>
                           </>
@@ -193,7 +193,7 @@ export default function HomePage() {
                                 <h1 className='kalam font-extrabold text-[gray]'>{data.author}</h1>
                               </div>
                               <div className="title my-[8px] shadow-2xl">
-                                <p className='kalam font-extrabold'><a href={data.url} rel='noreferrer' target="_blank">{data.title}</a></p>
+                                <p className='kalam font-extrabold'><a href={data.url}  rel='noopener' target="_blank">{data.title}</a></p>
                               </div>
                             </div>
                           </>
