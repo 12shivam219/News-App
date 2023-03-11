@@ -8,33 +8,35 @@ export default function HomePage() {
   const [news, setNews] = useState([])
   const [country, setCountry] = useState("in");
   const [category, setCategory] = useState("general");
-  const api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=30`
+  // const api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=30`
 
   const [side, setSide] = useState(true);
   const[dom,setDom]=useState('abplive.com')
   const [mid, setMid] = useState(true);
+  const [set, seSet] = useState(false);
   const location = useLocation();
   const [latestHeading, setLatestHeading] = useState("Latest News")
   const [topHeading, setTopHeading] = useState("Top News")
-  const [topnews, setTopNews] = useState([])
+  // const [topnews, setTopNews] = useState([])
   const [loading, setLoading] = useState(false)
-  const topNewsApi = `https://newsapi.org/v2/everything?domains=${dom}&sortBy=popularity&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=20`
+  // const topNewsApi = `https://newsapi.org/v2/everything?domains=${dom}&sortBy=popularity&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=20`
+  const api = set ? `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=30` : `https://newsapi.org/v2/everything?domains=${dom}&sortBy=popularity&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=20`
 
-  useEffect(() => {
-    const fetchApiTopNews = async () => {
-      try {
-        const response = await fetch(topNewsApi)
-        const json = await response.json();
-        const data = await json.articles
-        setTopNews(data)
-        setLoading(true)
-      }
-      catch (error) {
-        console.log(error);
-      }
-    }
-    fetchApiTopNews();
-  }, [topNewsApi])
+  // useEffect(() => {
+  //   const fetchApiTopNews = async () => {
+  //     try {
+  //       const response = await fetch(topNewsApi)
+  //       const json = await response.json();
+  //       const data = await json.articles
+  //       setTopNews(data)
+  //       setLoading(true)
+  //     }
+  //     catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchApiTopNews();
+  // }, [topNewsApi])
 
   useEffect(() => {
 
@@ -68,6 +70,7 @@ export default function HomePage() {
       setSide(false)
       setMid(true)
       setDom('abplive.com')
+      seSet(true)
     }
 
     if (location.pathname === '/India') {
@@ -159,8 +162,8 @@ export default function HomePage() {
               side ?
                 <div className="shadow-2xl rounded-lg mb-3 p-3 bg-slate-300">
                   {
-                    loading && topnews ?
-                      topnews.map((data) => {
+                    loading && news ?
+                      news.map((data) => {
                         return (
                           <>
                             <div>
@@ -219,8 +222,8 @@ export default function HomePage() {
                 <div>
                   {
 
-                    loading && topnews ?
-                      topnews.map((apiData) => {
+                    loading && news ?
+                      news.map((apiData) => {
                         return (
                           <>
                             <TopNews author={apiData.author} description={apiData.title} imageUrl={apiData.urlToImage} url={apiData.url} />
