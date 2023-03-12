@@ -3,6 +3,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import TopNews from '../../components/TopNews/TopNews';
 import Heading from '../../components/Heading/Heading';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 export default function HomePage() {
   const [news, setNews] = useState([])
@@ -56,10 +57,10 @@ export default function HomePage() {
   // }, [api])
 
   useEffect(() => {
-    fetch(api)
-      .then(response => response.json())
-      .then(data => {
-        setNews(data.articles);
+    axios
+      .get(api)
+      .then(response => {
+        setNews(response.data.articles);
         setLoading(true);
       })
       .catch(error => console.log(error));
