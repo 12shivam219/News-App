@@ -3,13 +3,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 import TopNews from '../../components/TopNews/TopNews';
 import Heading from '../../components/Heading/Heading';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
 
 export default function HomePage() {
   const [news, setNews] = useState([])
   const [country, setCountry] = useState("in");
   const [category, setCategory] = useState("general");
-  // const api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=30`
 
   const [side, setSide] = useState(true);
   const[dom,setDom]=useState('abplive.com')
@@ -18,53 +16,25 @@ export default function HomePage() {
   const location = useLocation();
   const [latestHeading, setLatestHeading] = useState("Latest News")
   const [topHeading, setTopHeading] = useState("Top News")
-  // const [topnews, setTopNews] = useState([])
   const [loading, setLoading] = useState(false)
-  // const topNewsApi = `https://newsapi.org/v2/everything?domains=${dom}&sortBy=popularity&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=20`
   const api = set ? `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=30` : `https://newsapi.org/v2/everything?domains=${dom}&sortBy=popularity&apiKey=8ad83384cfff4e7a942fc79bffcdded1&pageSize=20`
 
-  // useEffect(() => {
-  //   const fetchApiTopNews = async () => {
-  //     try {
-  //       const response = await fetch(topNewsApi)
-  //       const json = await response.json();
-  //       const data = await json.articles
-  //       setTopNews(data)
-  //       setLoading(true)
-  //     }
-  //     catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchApiTopNews();
-  // }, [topNewsApi])
-
-  // useEffect(() => {
-
-  //   const fetchApi = async () => {
-  //     try {
-  //       const response = await fetch(api)
-  //       const json = await response.json();
-  //       const data = await json.articles
-  //       setNews(data)
-  //       setLoading(true)
-  //     }
-  //     catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchApi();
-  // }, [api])
-
   useEffect(() => {
-    axios
-      .get(api)
-      .then(response => {
-        setNews(response.data.articles);
-        setLoading(true);
-      })
-      .catch(error => console.log(error));
-  }, [api]);
+
+    const fetchApi = async () => {
+      try {
+        const response = await fetch(api)
+        const json = await response.json();
+        const data = await json.articles
+        setNews(data)
+        setLoading(true)
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+    fetchApi();
+  }, [api])
 
   useEffect(() => {
 
