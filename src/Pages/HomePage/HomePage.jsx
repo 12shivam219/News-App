@@ -38,22 +38,32 @@ export default function HomePage() {
   //   fetchApiTopNews();
   // }, [topNewsApi])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const fetchApi = async () => {
-      try {
-        const response = await fetch(api)
-        const json = await response.json();
-        const data = await json.articles
-        setNews(data)
-        setLoading(true)
-      }
-      catch (error) {
-        console.log(error);
-      }
-    }
-    fetchApi();
-  }, [api])
+  //   const fetchApi = async () => {
+  //     try {
+  //       const response = await fetch(api)
+  //       const json = await response.json();
+  //       const data = await json.articles
+  //       setNews(data)
+  //       setLoading(true)
+  //     }
+  //     catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchApi();
+  // }, [api])
+
+  useEffect(() => {
+    fetch(api)
+      .then(response => response.json())
+      .then(data => {
+        setNews(data.articles);
+        setLoading(true);
+      })
+      .catch(error => console.log(error));
+  }, [api]);
 
   useEffect(() => {
 
